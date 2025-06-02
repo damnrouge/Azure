@@ -1,8 +1,31 @@
-User->>Client: Clicks "Sign in with Google"
-Client->>User: Redirect to OP
-User->>OP: Logs in & consents
-OP->>User: Redirect with "code"
-User->>Client: Passes "code" to Client
-Client->>OP: Sends "code" + client_secret
-OP->>Client: Returns id_token (JWT) + access_token
-Client->>Client: Validates id_token (user identity)
+# Identity & Access Protocols Explained
+
+## 📌 Core Protocols Overview
+| Protocol  | Primary Purpose                     | Key Component         | Modern Use Cases               |
+|-----------|-------------------------------------|-----------------------|-------------------------------|
+| **OAuth 2.0** | Delegated API access                | Access Tokens         | "Share data" buttons          |
+| **SAML**     | Enterprise SSO                      | XML Assertions        | Corporate logins              |
+| **OIDC**     | Federated authentication            | ID Tokens (JWT)       | "Sign in with Google"         |
+
+---
+
+## 🔄 Protocol Flows (Mermaid Diagrams)
+
+### 1. OAuth 2.0 Authorization Code Flow
+```mermaid
+sequenceDiagram
+    actor User
+    participant App
+    participant AuthServer
+    participant ResourceServer
+    User->>App: "Connect to Google"
+    App->>User: Redirect to AuthServer
+    User->>AuthServer: Login + Consent
+    AuthServer->>User: Returns code
+    User->>App: Passes code
+    App->>AuthServer: code + secret
+    AuthServer->>App: access_token
+    App->>ResourceServer: API request
+    ResourceServer-->>App: Protected data
+
+
