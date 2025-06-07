@@ -1,7 +1,4 @@
-# AWS vs Azure Service Comparison
-
-```Mermaid
-
+```mermaid
 graph TD
     A[Compute Services] --> B[EC2 (Elastic Compute Cloud)] --> C[Azure Virtual Machines (VMs)]
     A --> D[Lambda] --> E[Azure Functions]
@@ -29,25 +26,5 @@ graph TD
     AM --> AR[STS (Security Token Service)] --> AS[Azure AD Identity Protection]
 
     AT[Security Services] --> AU[GuardDuty] --> AV[Azure Sentinel]
-    AT --> AW[Inspector] --> AX[Azure Security Center]
-    AT --> AY[WAF (Web Application Firewall)] --> AZ[Azure Web Application Firewall]
-    AT --> BA[Macie] --> BB[Azure Purview]
-
-    BC[Monitoring & Management] --> BD[CloudWatch] --> BE[Azure Monitor]
-    BC --> BF[CloudTrail] --> BG[Azure Activity Log]
-    BC --> BH[AWS Config] --> BI[Azure Policy]
-    BC --> BJ[Systems Manager] --> BK[Azure Automation]
-
-    BL[Artificial Intelligence & Machine Learning] --> BM[SageMaker] --> BN[Azure Machine Learning]
-    BL --> BO[Rekognition] --> BP[Azure Cognitive Services - Vision]
-    BL --> BQ[Lex] --> BR[Azure Bot Services]
-    BL --> BS[Polly] --> BT[Azure Speech Services]
-
-    BU[Serverless Computing] --> BV[Lambda] --> BW[Azure Functions]
-    BU --> BX[API Gateway] --> BY[Azure API Management]
-    BU --> BZ[Step Functions] --> CA[Azure Logic Apps]
-
-    CB[Backup & Disaster Recovery] --> CC[AWS Backup] --> CD[Azure Backup]
-    CB --> CE[Elastic Disaster Recovery] --> CF[Azure Site Recovery]
-
+    AT --> AW[Inspector] -->
 ```
