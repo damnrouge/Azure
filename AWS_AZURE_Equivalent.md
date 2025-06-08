@@ -1,86 +1,28 @@
-```mermaid
-graph TD
-    A[Compute Services] --> B[EC2 Elastic Compute Cloud]
-    A --> C[Azure Virtual Machines (VMs)]
-    A --> D[Lambda]
-    A --> E[Azure Functions]
-    A --> F[Elastic Beanstalk]
-    A --> G[Azure App Service]
-    A --> H[Amazon Lightsail]
-    A --> I[Azure Virtual Machine Scale Sets]
+| Category          | Azure Service               | AWS Service                | Key Differences                                                                 |
+|-------------------|-----------------------------|----------------------------|---------------------------------------------------------------------------------|
+| **Compute**       |                             |                            |                                                                                 |
+| Virtual Machines  | Azure Virtual Machines      | Amazon EC2                 | Azure better for Windows, AWS has more instance types                           |
+| Serverless        | Azure Functions             | AWS Lambda                 | AWS has more event sources, Azure integrates with Microsoft stack               |
+| Containers        | AKS (Azure Kubernetes)      | Amazon EKS                 | AKS simpler setup, EKS deeper AWS integration                                   |
+| PaaS              | Azure App Service           | Elastic Beanstalk          | Azure better for .NET, Beanstalk more language-agnostic                         |
 
-    J[Storage Services] --> K[S3 Simple Storage Service]
-    J --> L[Azure Blob Storage]
-    J --> M[EBS Elastic Block Store]
-    J --> N[Azure Disk Storage]
-    J --> O[Glacier]
-    J --> P[Azure Blob Storage Archive Tier]
-    J --> Q[FSx Managed File Storage]
-    J --> R[Azure NetApp Files]
+| **Storage**       |                             |                            |                                                                                 |
+| Object Storage    | Azure Blob Storage          | Amazon S3                  | S3 more mature, Blob Storage better Azure integration                           |
+| Block Storage     | Azure Managed Disks         | Amazon EBS                 | EBS more performance options, Azure better for Windows                          |
+| File Storage      | Azure Files                 | Amazon EFS                 | EFS Linux-optimized, Azure Files supports SMB/NFS                               |
+| Archive Storage   | Azure Archive Storage       | Amazon Glacier             | Similar retrieval times and pricing                                             |
 
-    S[Networking Services] --> T[VPC Virtual Private Cloud]
-    S --> U[Azure Virtual Network (VNet)]
-    S --> V[Elastic Load Balancer ELB]
-    S --> W[Azure Load Balancer]
-    S --> X[Amazon Route 53]
-    S --> Y[Azure DNS]
-    S --> Z[Direct Connect]
-    S --> AA[Azure ExpressRoute]
-    S --> AB[CloudFront]
-    S --> AC[Azure CDN]
+| **Databases**     |                             |                            |                                                                                 |
+| Relational DB     | Azure SQL Database          | Amazon RDS                 | Azure optimized for MS SQL, RDS supports more engines                           |
+| NoSQL             | Azure Cosmos DB             | Amazon DynamoDB            | CosmosDB multi-model, DynamoDB serverless-first                                 |
+| Caching           | Azure Cache for Redis       | Amazon ElastiCache         | Similar performance characteristics                                             |
 
-    AD[Database Services] --> AE[RDS Relational Database Service]
-    AD --> AF[Azure SQL Database]
-    AD --> AG[DynamoDB]
-    AD --> AH[Azure Cosmos DB]
-    AD --> AI[Redshift]
-    AD --> AJ[Azure Synapse Analytics]
-    AD --> AK[Aurora]
-    AD --> AL[Azure Database for MySQL/PostgreSQL]
+| **Networking**    |                             |                            |                                                                                 |
+| CDN               | Azure CDN                   | Amazon CloudFront          | CloudFront has more edge locations globally                                     |
+| Load Balancing    | Azure Load Balancer         | AWS ALB/NLB                | AWS offers separate ALB (application) and NLB (network) load balancers          |
+| DNS               | Azure DNS                   | Amazon Route 53            | Route 53 has more advanced routing policies                                     |
+| Hybrid Cloud      | Azure ExpressRoute/VPN      | AWS Direct Connect/VPN     | AWS has more global points of presence                                          |
 
-    AM[Identity & Access Management] --> AN[IAM Identity and Access Management]
-    AM --> AO[Azure Active Directory (AAD)]
-    AM --> AP[Cognito]
-    AM --> AQ[Azure AD B2C]
-    AM --> AR[STS Security Token Service]
-    AM --> AS[Azure AD Identity Protection]
-
-    AT[Security Services] --> AU[GuardDuty]
-    AT --> AV[Azure Sentinel]
-    AT --> AW[Inspector]
-    AT --> AX[Azure Security Center]
-    AT --> AY[WAF Web Application Firewall]
-    AT --> AZ[Azure Web Application Firewall]
-    AT --> BA[Macie]
-    AT --> BB[Azure Purview]
-
-    BC[Monitoring & Management] --> BD[CloudWatch]
-    BC --> BE[Azure Monitor]
-    BC --> BF[CloudTrail]
-    BC --> BG[Azure Activity Log]
-    BC --> BH[AWS Config]
-    BC --> BI[Azure Policy]
-    BC --> BJ[Systems Manager]
-    BC --> BK[Azure Automation]
-
-    BL[Artificial Intelligence & Machine Learning] --> BM[SageMaker]
-    BL --> BN[Azure Machine Learning]
-    BL --> BO[Rekognition]
-    BL --> BP[Azure Cognitive Services - Vision]
-    BL --> BQ[Lex]
-    BL --> BR[Azure Bot Services]
-    BL --> BS[Polly]
-    BL --> BT[Azure Speech Services]
-
-    BU[Serverless Computing] --> BV[Lambda]
-    BU --> BW[Azure Functions]
-    BU --> BX[API Gateway]
-    BU --> BY[Azure API Management]
-    BU --> BZ[Step Functions]
-    BU --> CA[Azure Logic Apps]
-
-    CB[Backup & Disaster Recovery] --> CC[AWS Backup]
-    CB --> CD[Azure Backup]
-    CB --> CE[Elastic Disaster Recovery]
-    CB --> CF[Azure Site Recovery]
-```
+| **AI/ML**         |                             |                            |                                                                                 |
+| Machine Learning  | Azure Machine Learning      | Amazon SageMaker           | SageMaker more mature, Azure integrates with Microsoft tools                    |
+| Cognitive Services| Azure Cognitive Services    | AWS AI Services            | Azure offers pre-built APIs for vision, speech, etc.                            |
